@@ -1,21 +1,23 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { RootStoreState, UserActions } from '../../store';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {RootStoreState, UserActions} from '../../store';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html'
+    selector: 'app-home',
+    templateUrl: './home.page.html'
 })
-export class HomePage implements OnInit , OnDestroy {
-  constructor(private store: Store<RootStoreState.AppState>) {}
-  ngOnInit(): void {
-  }
+export class HomePage implements OnInit, OnDestroy {
+    constructor(private store: Store<RootStoreState.AppState>) {
+    }
 
-  ngOnDestroy(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  public execute() {
-    this.store.dispatch(UserActions.login({payload: {user: 'name'}}));
-  }
+    ngOnDestroy(): void {
+    }
+
+    public execute() {
+        this.store.dispatch(UserActions.login({payload: {user: 'name'}}));
+    }
 
 }

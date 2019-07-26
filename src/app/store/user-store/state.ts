@@ -1,4 +1,5 @@
-import { UserLogin } from '../../models/user-login.model';
+import {UserLogin} from '../../models/user-login.model';
+
 export interface State {
     isLoading: boolean;
     isLoader: boolean;
